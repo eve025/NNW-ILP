@@ -1,0 +1,24 @@
+{
+  "es": {
+    "samples": 4370,
+    "train": 3342,
+    "val": 372,
+    "test": 656,
+    "suggested_threshold": 0.51,
+    "thresholds_csv": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\retrain_by_lang_thresholds_es.csv",
+    "thresholds_csv_calibrated": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\retrain_by_lang_thresholds_es_calibrated.csv",
+    "plot": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\thresholds_es.png",
+    "plot_calibrated": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\thresholds_es_calibrated.png"
+  },
+  "en": {
+    "samples": 6142,
+    "train": 4698,
+    "val": 522,
+    "test": 922,
+    "suggested_threshold": 0.51,
+    "thresholds_csv": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\retrain_by_lang_thresholds_en.csv",
+    "thresholds_csv_calibrated": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\retrain_by_lang_thresholds_en_calibrated.csv",
+    "plot": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\thresholds_en.png",
+    "plot_calibrated": "C:\\Users\\LENOVO\\Desktop\\REDES-EJEMPLO-PIA-NNW\\AGENTEia\\lstm_notebook\\thresholds_en_calibrated.png"
+  }
+}

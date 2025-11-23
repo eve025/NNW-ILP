@@ -1,0 +1,122 @@
+# Lista de frases/fragmentos que, si aparecen en el mensaje, fuerzan etiqueta HAM
+# Edita este archivo para añadir dominios, frases o tokens seguros.
+# Ejemplos:
+confirmacion
+comprobante
+reserva
+resuelto
+comprobante fiscal
+factura
+adjunto
+reunion
+reservacion
+cita
+constancia
+inscripcion
+notificacion
+aviso importante
+confirmacion de asistencia
+comprobante de pago
+comprobante adjunto
+documento solicitado
+material adjunto
+entrega confirmada
+orden de servicio
+acuse de recibo
+seguimiento a la solicitud
+formato actualizado
+información requerida
+detalles de la reunión
+agenda del día
+registro completado
+solicitud atendida
+respuesta pendiente
+documentación completa
+envío programado
+solicitud interna
+gestión administrativa
+formulario completado
+actualización del proyecto
+aviso de entrega
+nota aclaratoria
+informe final
+evaluación enviada
+trabajo final adjunto
+documento corregido
+versión revisada
+retroalimentación adjunta
+tarea revisada
+revisión pendiente
+actualización solicitada
+programación de actividades
+recordatorio de reunión
+recordatorio de entrega
+seguimiento del caso
+cita programada
+comunicación oficial
+notificación interna
+solicitud aprobada
+permiso autorizado
+constancia de cumplimiento
+comprobante de inscripción
+pago registrado
+folio asignado
+acuse digital
+acuse automático
+respuesta recibida
+mensaje interno
+saludos cordiales
+quedo atento
+quedo al pendiente
+itinerario
+itinerario de viaje
+voucher
+voucher adjunto
+número de seguimiento
+numero de seguimiento
+tracking
+envío confirmado
+envio confirmado
+pago realizado
+pago pendiente
+resumen de cuenta
+estado de cuenta
+extracto
+ticket de soporte
+caso #
+caso número
+número de orden
+nº de orden
+número de pedido
+pedido procesado
+pedido enviado
+hoja de ruta
+acta
+minuta
+propuesta
+cotización
+cotizacion
+facturación
+facturacion
+nómina
+nomina
+contrato firmado
+archivo adjunto
+informe adjunto
+presentación adjunta
+presentacion adjunta
+horario
+turno programado
+código de acceso
+clave de acceso
+PIN
+código de validación
+codigo de validacion
+enlace seguro
+link seguro
+asunto: comprobante
+confirmado
+aceptado
+autorizado
+notificación oficial
+notificacion oficial

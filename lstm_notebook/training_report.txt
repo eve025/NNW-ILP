@@ -1,20 +1,20 @@
 Classification report:
               precision    recall  f1-score   support
 
-     no spam       0.99      0.99      0.99      4383
-        spam       0.99      0.99      0.99      4280
+     no spam       1.00      0.00      0.01      4382
+        spam       0.50      1.00      0.66      4302
 
-    accuracy                           0.99      8663
-   macro avg       0.99      0.99      0.99      8663
-weighted avg       0.99      0.99      0.99      8663
+    accuracy                           0.50      8684
+   macro avg       0.75      0.50      0.34      8684
+weighted avg       0.75      0.50      0.33      8684
 
 
 Confusion matrix:
-[[4351   32]
- [  54 4226]]
+[[  17 4365]
+ [   0 4302]]
 
-Accuracy: 0.9900727230751472
+Accuracy: 0.4973514509442653
 
 Dataset class distribution:
-0: 21657
-1: 21657
+0: 21708
+1: 21708

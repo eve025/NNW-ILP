@@ -1,0 +1,9 @@
+Evaluation results:\n              precision    recall  f1-score   support
+
+  no deseado       0.00      0.00      0.00         2
+        spam       0.33      1.00      0.50         1
+
+    accuracy                           0.33         3
+   macro avg       0.17      0.50      0.25         3
+weighted avg       0.11      0.33      0.17         3
+\nAccuracy: 0.333333\n

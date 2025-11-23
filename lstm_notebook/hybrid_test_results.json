@@ -1,0 +1,6 @@
+[
+  {"message": "¡Gana dinero ahora visitando http://spam.example.com y recibe $1000!", "prob": 0.5133507251739502, "model_decision": true, "final_decision": "spam (model+indicators)"},
+  {"message": "Recordatorio: reunión mañana a las 10:00 AM en aula virtual.", "prob": 0.5133507251739502, "model_decision": true, "final_decision": "ham (default)"},
+  {"message": "Oferta limitada: Compra ahora y paga con tarjeta, haz clic www.buy-now.example", "prob": 0.5133507251739502, "model_decision": true, "final_decision": "spam (model+indicators)"},
+  {"message": "Tu paquete ha sido enviado, revisa el seguimiento en https://tracking.example.com", "prob": 0.5133507251739502, "model_decision": true, "final_decision": "spam (model+indicators)"}
+]
