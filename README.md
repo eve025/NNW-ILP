@@ -1,95 +1,54 @@
-## 🛡️ Experto en Fraude Digital 🚨 (Agente de Seguridad)
+AgenteDeIA — Detector LSTM de Spam (notebook + demo web)
 
-Este proyecto demuestra cómo crear un Agente de IA personalizado con el rol de Experto en Seguridad Digital usando la API de Google Gemini e implementarlo de forma segura en una interfaz web con HTML, CSS y JavaScript.
+Instrucciones rápidas para poner en marcha el proyecto en Windows (PowerShell).
 
-## 💡 Funcionamiento del Agente y System Instruction
+Requisitos
+- Python 3.8+ instalado y disponible como `python` o `py -3`.
+- Windows PowerShell (v5.1) o superior.
 
-El agente ha sido configurado con una Instrucción del Sistema (systemInstruction) que define su personalidad y método de análisis de seguridad.
-
-## Rol del Agente
-
-El agente actúa como un Experto en Detección de Fraude Digital y Phishing, con un enfoque analítico clave:
-
-"Eres un Experto en Detección de Fraude Digital y Phishing. Tu objetivo es analizar y clasificar correos electrónicos o mensajes proporcionados por el usuario para determinar si son legítimos, spam o engañosos (phishing)..."
-
-Cada respuesta de la IA sigue una estructura clara para proporcionar una clasificación, el motivo del análisis y un consejo de seguridad.
-
-## 🔒 Arquitectura de Seguridad (¡Clave Oculta!)
-
-Para garantizar que su **Clave de API de Gemini (GEMINI\_API\_KEY)** permanezca secreta y no se suba a GitHub, este proyecto utiliza una arquitectura de **Backend (Node.js)**:
-
-1.  **Frontend (`index.html` / `client.js`):** Envía la pregunta del usuario a un servidor local.
-2.  **Backend (`server.js`):**
-    * Lee la clave de API de forma segura desde el archivo `.env`.
-    * Maneja la lógica de la llamada a la API de Gemini, inyectando la System Instruction.
-    * Devuelve la respuesta al frontend.
-3.  **Seguridad (`.env` y `.gitignore`):** Se asegura de que el archivo que contiene la clave nunca sea público.
-
-
-## 🛠️ Configuración y Ejecución del Proyecto
-
-Siga estos pasos en su terminal para configurar y ejecutar el proyecto de forma segura.
-
-### 1. Inicialización y Dependencias
-
-Asegúrese de estar en la carpeta raíz del proyecto y ejecute:
-
-# Inicializa un proyecto Node.js
-npm init -y
-
-# Instala las dependencias necesarias
-npm install @google/genai express dotenv cors
-
-
-### 2\. Archivos de Seguridad
-
-Cree estos dos archivos en la raíz del proyecto para proteger su clave.
-
-#### A) `.env` (Archivo Secreto)
-
-**Coloque su Clave de API aquí.**
-
+Pasos automáticos (recomendado)
+1. Abre PowerShell en la raíz del repositorio.
+2. Permite ejecución temporal de scripts (si no lo has hecho):
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
-# .env
-# ¡IMPORTANTE! Reemplace "TU_CLAVE_DE_API_DE_GOOGLE_AI_STUDIO_AQUI" con su clave real.
-GEMINI_API_KEY="TU_CLAVE_DE_API_DE_GOOGLE_AI_STUDIO_AQUI" 
+3. Ejecuta el script de setup (crea `.venv`, instala TensorFlow y paquetes):
+```powershell
+.\setup_env.ps1
 ```
 
-#### B) `.gitignore` (Ignora Secretos en Git)
+Esto creará `.venv` en la raíz, instalará TensorFlow y los requisitos listados en `lstm_notebook/requirements.txt` y `web_demo/requirements.txt`.
 
-Este archivo evita que `.env` y las dependencias se suban a GitHub.
+Activar el entorno manualmente
+```powershell
+.\.venv\Scripts\Activate.ps1
 
-```
-# .gitignore
-# Dependencias del proyecto Node
-/node_modules
-
-# Archivos de configuración y secretos que NO deben ser públicos
-.env 
+# comprobar instalación
+python -c "import sys, tensorflow as tf; print('PYTHON:', sys.executable); print('TF version:', tf.__version__)"
 ```
 
-### 3\. Ejecución del Servidor
+Entrenar el modelo (opcional)
+```powershell
+# dentro del venv activado
+python .\lstm_notebook\train.py
+```
+Esto generará `lstm_notebook\spam_lstm_model.h5`, `tokenizer.pkl`, `training_plot.png`, `training_report.txt` y `best_threshold.txt`.
 
-Una vez que tenga los archivos de código (`server.js`, `client.js`, `index.html`) en su lugar y haya configurado su `.env`, siga estos pasos para iniciar el agente:
+Arrancar la demo web
+```powershell
+# con el venv activado
+python .\web_demo\app.py
+```
+Abrir `http://127.0.0.1:5000/` en el navegador.
 
-1.  **Iniciar el Backend:**
-    Ejecute el servidor de Node.js en su terminal:
-    ```bash
-    npm start 
-    # (También puede usar: node server.js)
-    ```
-    **Verificación:** Si el servidor inicia correctamente, verá el mensaje: **"Servidor del Tutor de ML corriendo en http://localhost:3000"**.
+Diagnóstico y utilidades
+- `web_demo\quick_test.py`: ejemplo rápido de inferencia en consola.
+- `web_demo\check_model_weights.py`: inspecciona la última capa y hace pruebas controladas.
+- Si VS Code muestra "reportMissingImports" para `tensorflow.keras`, selecciona el intérprete del venv:
+  - Ctrl+Shift+P → "Python: Select Interpreter" → elige `.venv\Scripts\python.exe`.
 
-    Verificación de Servidor: Cuando inicie correctamente, verá el mensaje de confirmación en la consola.
-    ![Terminal mostrando 'Servidor del Tutor de ML corriendo...'](servidor.jpg)
-    
-2.  **Abrir la Interfaz (Frontend):**
-    Abra el archivo `index.html` en su navegador web. El frontend se conectará automáticamente al backend.
-    
-    **¡Ya puede usar el Agente!**
-    <!-- Reemplace 'assets/index_ready.png' con la ruta real de su imagen -->
-    ![Interfaz del Tutor de Machine Learning lista en el navegador](INDEX1.png)
+Notas
+- El archivo `.vscode/settings.json` puede apuntar al intérprete `.venv` para ayudar a colaboradores que usen VS Code.
+- El script `setup_env.ps1` usa `python` o `py -3` para crear el venv; si tu instalación de Python usa otra ruta, activa manualmente el entorno y ejecuta los comandos `python -m pip install ...` mostrados en el script.
 
-### 4\. Abrir la Interfaz
-
-Abra el archivo `index.html` en su navegador web. El frontend se conectará automáticamente al backend para interactuar con el **Tutor de Machine Learning**.
+Si quieres, puedo añadir un endpoint `/status` en la demo para mostrar si modelo/tokenizer/umbral están cargados, o insertar los formularios de prueba directamente en `web_demo/templates/index.html`.

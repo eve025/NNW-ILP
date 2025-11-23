@@ -1,0 +1,8 @@
+tensorflow>=2.10.0
+pandas
+scikit-learn
+matplotlib
+flask
+requests
+nltk
+Unidecode
