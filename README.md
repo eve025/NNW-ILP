@@ -20,11 +20,46 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 Esto creará `.venv` en la raíz, instalará TensorFlow y los requisitos listados en `lstm_notebook/requirements.txt` y `web_demo/requirements.txt`.
 
 Activar el entorno manualmente
+
+Puedes tener entornos virtuales separados en la raíz o por módulo; aquí están las formas recomendadas.
+
+- Activar el `venv` creado en la raíz del repo:
 ```powershell
-.\.venv\Scripts\Activate.ps1
+# Desde la raíz del repo
+& .\.venv\Scripts\Activate.ps1
 
 # comprobar instalación
 python -c "import sys, tensorflow as tf; print('PYTHON:', sys.executable); print('TF version:', tf.__version__)"
+```
+
+- Activar el `venv` dentro de `web_demo` (si existe):
+```powershell
+# Desde la raíz del repo
+& .\web_demo\.venv\Scripts\Activate.ps1
+```
+
+- Activar el `venv` dentro de `lstm_notebook` (si existe):
+```powershell
+# Desde la raíz del repo
+& .\lstm_notebook\.venv\Scripts\Activate.ps1
+```
+
+Desactivar el entorno cuando termines:
+```powershell
+deactivate
+```
+
+Ejecutar `setup_env.ps1` (opcional)
+```powershell
+# Si prefieres que el script cree/actualice el venv e instale paquetes,
+# activa primero el venv deseado (o deja que el script cree el de la raíz)
+.\setup_env.ps1
+```
+
+Nota sobre ejecución de scripts en PowerShell (si da error):
+```powershell
+# Ejecuta esto sólo si confías en el contenido del script
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 
 Entrenar el modelo (opcional)
